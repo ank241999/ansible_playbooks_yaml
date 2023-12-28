@@ -1,0 +1,6 @@
+[servers]
+ansible-target-1 ansible_host=3.110.148.105 ansible_connection=ssh ansible_user=ubuntu
+ansible-target-2 ansible_host=13.201.29.68 ansible_connection=ssh ansible_user=ubuntu
+
+[dev_server]
+ansible-target-1
