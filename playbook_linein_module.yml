@@ -1,0 +1,9 @@
+# Install Nginx by ansible
+- name: setup nginx (server)
+  hosts: dev_server
+  become: true
+  tasks:
+    - name: wrie a file using line a module
+      lineinfile:
+        path: /home/ubuntu/linemodule.txt
+        line: "added by line in , love from my side and my wish"
