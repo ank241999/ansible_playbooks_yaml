@@ -1,0 +1,11 @@
+# Install Nginx by ansible
+- name: setup nginx (server)
+  hosts: servers
+  become: true
+  tasks:
+    - name: install net-tool
+      apt:
+        name: net-tools
+        state: latest
+    - name: Run a shell
+      script: play_shell.sh  
