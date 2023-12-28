@@ -1,0 +1,36 @@
+# Install Nginx by ansible
+- name: setup nginx (server)
+  hosts: servers
+  become: true
+  tasks:
+    - name: Install latest nginx
+      apt:
+        name: nginx
+        state: latest
+
+    - name: Start nginx service
+      service:
+        name: nginx
+        state: started
+
+    - name: Enable nginx service
+      service:
+        name: nginx
+        enabled: yes
+
+    - name: Check status of Nginx
+      command: systemctl status nginx
+
+    - name: copy a file
+      copy:
+        src: /home/ubuntu/my.txt
+        dest: /home/ubuntu/ 
+
+- name: setup nginx (server)
+  hosts: ansible-target-1
+  become: true
+  tasks:
+    - name: 
+      copy:
+        src: /home/ubuntu/my2.txt
+        dest: /home/ubuntu/
