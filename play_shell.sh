@@ -13,3 +13,4 @@ ip_address=$(ifconfig)
 echo "$ip_address" > "$folder_name/ip_address.txt"
 
 echo "Folder '$folder_name' created with IP address stored in 'ip_address.txt'."
+#shell file shoud be with  chmod +x permission
