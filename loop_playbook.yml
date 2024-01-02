@@ -1,0 +1,22 @@
+- 
+  name: this is our first play.
+  hosts: dev_server
+  become: true
+  vars:
+    user:
+     - ankush
+     - tanisha
+     - demo1
+     - demo7
+     - demo6
+     - demo5
+     - demo4
+     - demo3
+     - demo2
+
+  tasks: 
+    - 
+      name: 'add user'
+      command: useradd "{{item}}"
+#      apt: name="{{ item }}" state=present
+      with_items: "{{ user }}"
