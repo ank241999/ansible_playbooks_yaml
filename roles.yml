@@ -1,0 +1,5 @@
+- 
+  name: this is our 1st play.
+  hosts: dev_server
+  roles: 
+    - demo
