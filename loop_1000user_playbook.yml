@@ -1,0 +1,11 @@
+---
+- name: Create 1000 users
+  hosts: dev_server
+  become: true
+  vars:
+    number_of_users: 1000
+
+  tasks:
+    - name: 'add user'
+      command: useradd "user{{ item }}"
+      with_sequence: start=1 end={{ number_of_users }} format=user%d
