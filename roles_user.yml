@@ -1,0 +1,6 @@
+- 
+  name: this is our first play.
+  hosts: dev_server
+  become: true
+  roles:
+    - role_loop
