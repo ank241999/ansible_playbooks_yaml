@@ -1,0 +1,36 @@
+- 
+  name: this is our first play.
+  hosts: dev_server
+  vars: 
+    age: 15
+  tasks: 
+    - 
+      name: 'creating file using variable'
+      command: touch /tmp/18.txt
+      when: age == 18
+
+- 
+  name: this is conditin to install .
+  hosts: sql_server
+  become: true
+  vars: 
+    age: 18
+  tasks: 
+    - 
+      name: 'install apache2'
+      apt:
+        name: apache2
+        state: latest
+        when: age > 10 and age < 18
+#      when: age == 18
+#    - 
+#      name: 'check status apache2'
+#      command: systemctl status apache2
+#    - 
+#      name: 'start the apache2'
+#      service: 
+#        name: apache2
+#        state: started
+#    - 
+#      name: 'check status apache2'
+#      command: systemctl status apache2
