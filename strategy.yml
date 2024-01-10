@@ -1,0 +1,8 @@
+- name: 'strategy demo'
+  hosts: webserver1,sqlserver1
+  strategy: free
+  tasks:
+    - name: 'first task'
+      apt: name='apache2' state='present'
+    - name: 'second task'
+      command: touch /tmp/strategy_task2.txt
